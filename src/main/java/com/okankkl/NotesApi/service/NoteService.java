@@ -56,7 +56,7 @@ public class NoteService {
 
     public Response<Void> deleteAll(){
         try{
-            repository.deleteAll();;
+            repository.deleteAll();
             return Response.success();
         }catch (Exception e){
             return Response.failed(e.getLocalizedMessage());
