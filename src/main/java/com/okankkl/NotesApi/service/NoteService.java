@@ -53,4 +53,13 @@ public class NoteService {
             return Response.failed(e.getLocalizedMessage());
         }
     }
+
+    public Response<Void> deleteAll(){
+        try{
+            repository.deleteAll();;
+            return Response.success();
+        }catch (Exception e){
+            return Response.failed(e.getLocalizedMessage());
+        }
+    }
 }

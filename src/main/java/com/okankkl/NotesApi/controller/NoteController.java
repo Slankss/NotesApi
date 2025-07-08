@@ -36,4 +36,9 @@ public class NoteController {
     public Response<Void> deleteNote(@PathVariable String id){
         return service.deleteNoteById(Long.parseLong(id));
     }
+
+    @DeleteMapping("/all")
+    public Response<Void> deleteNote(){
+        return service.deleteAll();
+    }
 }
