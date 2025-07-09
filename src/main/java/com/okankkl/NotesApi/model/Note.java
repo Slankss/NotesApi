@@ -1,9 +1,10 @@
 package com.okankkl.NotesApi.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -16,13 +17,20 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Size(max = 100, message = "Header can not be greater than 50")
+    @NotBlank(message = "Header can not be empty")
     private String header;
+
+    @Size(max = 100, message = "Header can not be greater than 250")
+    @NotBlank(message = "Content can not be empty")
     private String content;
+
+    private Integer priority;
 
     @CreatedDate
     private LocalDateTime createdDate;

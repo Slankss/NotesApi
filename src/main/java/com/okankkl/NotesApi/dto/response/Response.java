@@ -1,4 +1,4 @@
-package com.okankkl.NotesApi.model;
+package com.okankkl.NotesApi.dto.response;
 
 import jakarta.annotation.Nullable;
 
